@@ -37,9 +37,10 @@ const getTapa = async () => {
 		const getInfo = await axios.get(
 			"https://tools.zenoradio.com/api/stations/nce136tua2zuv/now_playing/"
 		);
-
-		titulo.innerHTML =`${getInfo.data.artist}`;
-        tema.innerHTML =`${getInfo.data.title}`;
+      let artist=getInfo.data.artist.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+      let title=getInfo.data.title.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+		titulo.innerHTML =`${artist}`;
+        tema.innerHTML =`${title}`;
     
 
 		const getTapa = await axios.get(
@@ -47,7 +48,7 @@ const getTapa = async () => {
 		);
 		if (getTapa.data.artists) {
 			tapa.src = getTapa.data.artists[0].strArtistThumb || "img/logorepro.jpg";
-		}else{tapa.src ="img/logorepro.jpg";}
+		}else{tapa.src ="img/portada_disco.webp";}
 	};
 
 getTapa();
@@ -66,15 +67,16 @@ range.addEventListener("input", (e) => {
 loadIp= async()=>{
     const getIp= await axios.get("https://jsonip.com");
     const getCity= await axios.get(`http://api.ipstack.com/${getIp.data.ip}?access_key=${ipStack_token}`);
-    console.log(getCity);
+    
     const getTemp= await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${getCity.data.city}&appid=${token}&lang=es&units=metric`);
-    console.log(getTemp);
+    
 
     nombre.innerHTML=`${getCity.data.city}`;
-    temp.innerHTML=`${getTemp.data.main.temp}`;
+    temp.innerHTML=`${parseInt(getTemp.data.main.temp)}&deg;`;
     icono.src=`img/icons/${getTemp.data.weather[0].icon}.png`;
-    desc.innerHTML=`${getTemp.data.weather[0].description}`;
-    console.log(getTemp.data.weather[0].icon);   
+    let description=getTemp.data.weather[0].description.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
+    desc.innerHTML=`${description}`;
+      
 };
 
 loadIp();

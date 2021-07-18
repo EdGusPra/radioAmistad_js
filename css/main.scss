@@ -81,8 +81,28 @@ body {
   height: 6.25rem;
   padding: 2rem;
 
-  &__btn{
-    @extend .dark-mode-drop-shadow ;
+  
+}
+
+.image {
+  @extend .center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 40rem;
+
+  &__link__chat{
+    width: 80%;
+    height: 15%;
+    @extend .center;
+    @extend .dark-mode-inner-shadow ;
+    background: linear-gradient(to left, #161616, #000000);
+    border: 10px solid $black;
+    border-radius:30px;
+    
+    
+    a{
+    
     border-radius:20px;
     padding:10px;
     text-decoration: none;
@@ -90,17 +110,13 @@ body {
     font-size: 3rem;
     font-weight: 400;
   }
-}
-
-.image {
-  @extend .center;
-  width: 100%;
-  padding:2rem 0;
+  } 
   
   &__repo{
     @extend .center;
     background: linear-gradient(to left, #161616, #000000);
     width:90%;
+    height: 80%;
     
     @extend .dark-mode-drop-shadow;
     border-radius:50px;
@@ -364,10 +380,12 @@ input[type="range"]::before {
 
 .info {
   width: 100%;
-  padding:3rem 0 ;
+  margin-top: 3rem;
+ 
+  
 
   &__container{
-    @extend .center;
+  @extend .center;
   flex-direction: column;
   height:100%;
     .clima{
@@ -468,7 +486,7 @@ input[type="range"]::before {
     margin: auto;
     width: 5%;
     height: 5%;
-    background-color: $pink;
+    background-color: $black;
     box-shadow: 0 0 1px 2px #fff;
     border-radius: 50%;
   }
@@ -516,19 +534,24 @@ input[type="range"]::before {
 }
 }
 
-
-
 .footer {
   width: 100%;
   height: 6.5rem;
   @extend .center;
  
+  &__container{
+    width: 100%;
+    @extend .center;
+    background: linear-gradient(to bottom, #161616, #000000);
+  }
 
   &__titulo {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     @extend .clip;
     @extend .dark-mode-inner-shadow;
+    text-align: center;
+    
     padding:0 1rem;
     border-radius: 30px;
     &__nombre {
@@ -561,11 +584,35 @@ input[type="range"]::before {
 
   .image {
     width: 50%;
-  }
+    justify-content: space-around;
+    height: 50rem;
+
+    
+
+    &__container{
+
+      height: 80%;
+      
+    }
+    &__link__chat{
+      height: 20%;
+    }
+    }
   
   .repro {
     width: 50%;
   
+  }
+
+  .info{
+    
+    &__container{
+     
+      .clima{
+
+    width: 50%;
+   }
+  }
   }
 
 
@@ -578,12 +625,16 @@ input[type="range"]::before {
 
 @media (min-width: 1235px) {
   html{
-    font-size: 12px;
+    font-size: 11px;
   }
   .image {
     width: 33%;
-    
     height: 80vh;
+
+    &__link__chat{
+      height: 20%;
+    }
+    
   }
 
   .repro {
@@ -591,14 +642,25 @@ input[type="range"]::before {
     height: 80vh;
     .repro__container{
       height: 100%;
-      width: 70%;
+      width: 80%;
     }
+
+    
+   
 
   }
 
   .info {
     width: 33%;
     height: 80vh;
+
+    &__container{
+      .clima{
+
+    width: 70%;
+   } 
+      }
+    
   }
 }
 
