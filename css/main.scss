@@ -354,14 +354,14 @@ input[type=range]::-moz-range-track {
 }
 
 input[type="range"]::before {
-    content: "0 2 3 4 5 6 7 8 9";
+    content: "1 2 3 4 5 6 7 8 9";
     position: absolute;
     text-align: center;
     color: #c4c4c4;
-    font-size: 1rem;
+    font-size: .8rem;
 
     /*Serves to spread the letters to fit the whole width of the track */
-    letter-spacing: .4em;
+    letter-spacing: .3rem;
 
     top: 1; bottom: 0;
     left: 0; right: 0;
