@@ -37,13 +37,10 @@ $transition-duration: 0.5s;
 .dark-mode-inner-shadow {
   box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
     inset -2px -2px 4px 0px $dark-mode-white;
-
 }
 .dark-mode-drop-shadow {
   box-shadow: 10px 10px 10px 0px $dark-mode-black,
     -2px -2px 10px 0px $dark-mode-white;
-
-   
 }
 .center {
   display: flex;
@@ -65,7 +62,16 @@ html {
 body {
   @extend .center;
   background-color: $background;
-  
+}
+
+// .swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+
+// }
+.swal2-title {
+  font-size: 2rem;
+}
+.swal2-html-container {
+  font-size: 2rem;
 }
 
 .main {
@@ -75,13 +81,15 @@ body {
   width: 100%;
 }
 
+.rodar {
+  animation: rodar 5s linear infinite;
+}
+
 .nav {
   @extend .center;
   width: 100%;
   height: 6.25rem;
   padding: 2rem;
-
-  
 }
 
 .image {
@@ -91,393 +99,408 @@ body {
   width: 100%;
   height: 40rem;
 
-  &__link__chat{
+  &__link__chat {
     width: 80%;
     height: 15%;
     @extend .center;
-    @extend .dark-mode-inner-shadow ;
+    @extend .dark-mode-inner-shadow;
     background: linear-gradient(to left, #161616, #000000);
     border: 10px solid $black;
-    border-radius:30px;
-    
-    
-    a{
-    
-    border-radius:20px;
-    padding:10px;
-    text-decoration: none;
-    @extend .clip;
-    font-size: 3rem;
-    font-weight: 400;
+    border-radius: 30px;
+
+    a {
+      border-radius: 20px;
+      padding: 10px;
+      text-decoration: none;
+      @extend .clip;
+      font-size: 3rem;
+      font-weight: 400;
+    }
   }
-  } 
-  
-  &__repo{
+
+  &__repo {
     @extend .center;
     background: linear-gradient(to left, #161616, #000000);
-    width:90%;
-    height: 80%;
-    
-    @extend .dark-mode-drop-shadow;
-    border-radius:50px;
-
-    &__img{
     width: 90%;
-    
-  }
+    height: 80%;
+
+    @extend .dark-mode-drop-shadow;
+    border-radius: 50px;
+
+    &__img {
+      width: 50%;
+    }
   }
 }
 
 .repro {
   @extend .center;
   width: 100%;
-  .repro__container{
-  @extend .center;
-  @extend .dark-mode-inner-shadow;
-  flex-flow: column;
-  justify-content: space-around;
-  width: 90%;
-  height:55rem;
-  background-color:$black;
-  border-radius: 30px;
-  position: relative;
-  
-  &:after{
-    content:"";
-    position:absolute;
-    width:90%;
-    height:95%;
-    background: linear-gradient(to right, #161616, #000000);
-    @extend .dark-mode-drop-shadow;
-    border-radius: 30px;
-    
-  }
-  
-  .disco{
-    @extend .center;
-    z-index: 2;
-    height:25rem;
-    width:25rem;
-    position: relative;
-    padding-top: 5px;
-
-    &::after{
-      content:"";
-      position:absolute;
-      width: 100%;
-      height:100%;
-      transform:rotate(137deg);
-      background-color: $background;
-      @extend .dark-mode-drop-shadow;
-      border-radius:50%;
-      z-index: -1;
-    }
-    
-
-    &__svg {
-      @extend .center;
-      padding-top: 5px;
-      position: absolute;
-      width: 100%;
-      height:100%;
-      z-index: 3;
-      width: 30rem;
-      height:30rem;
-      left:-11px;
-      top:-10px;
-      filter: blur(2.5px);
-
-      .path{
-        stroke:url("#g");
-      }
-      
-    }
-    
-    &__portada{
-      @extend .center;
-      width:100%;
-      animation:rodar 5s linear infinite;
-      
-      &__img{
-        border-radius: 50%;
-        width: 90%;
-      }
-    }
-  }
-  .titulos{
+  .repro__container {
     @extend .center;
     @extend .dark-mode-inner-shadow;
-    overflow: hidden;
-    
-    border-radius :20px;
-    z-index: 2;
-    flex-direction: column;
-    justify-content:space-evenly;
-    width:85%;
-    height:11rem;
+    flex-flow: column;
+    justify-content: space-around;
+    width: 90%;
+    height: 55rem;
+    margin-top: 2rem;
+    background-color: $black;
+    border-radius: 30px;
+    position: relative;
 
-    &__nombre{
-      font-size: 2rem;
-      text-align: center;
-      
-
-      
-
-      font-weight: 800;
-      @extend .clip;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 90%;
+      height: 95%;
+      background: linear-gradient(to right, #161616, #000000);
+      @extend .dark-mode-drop-shadow;
+      border-radius: 30px;
     }
 
-    &__separa{
-      font-size: 1.5rem;
-      font-weight: 800;
-      @extend .clip;
-    }
-
-    &__tema{
-      font-size: 2rem;
-      font-weight: 400;
-      text-align: center;
-      @extend .clip;
-    }
-  }
-}
-  .controls{
-    @extend .center;
-    justify-content:space-evenly;
-    width: 100%;
-    height:10rem;
-    z-index: 2;
-
-    &__botones{
+    .disco {
       @extend .center;
-      width: 80px;
-      height:80px;
-      border-radius:50%;
-      background-color:$black;
-      @extend .dark-mode-inner-shadow;
-    }
-    .fa-power-off{color:rgb(1, 253, 35);
-      &:hover{
-        text-shadow: 0px 1px 10px rgba(1, 253, 35,.5),
-                   0px 2px 15px rgba(1, 253, 35,.5);
-      
-      }};
-    .fa-ban{color:rgb(253, 1, 35);
-      &:hover{
-        text-shadow: 0px 1px 10px rgb(253, 1, 35),
-                   0px 2px 15px rgba(253, 1, 35,.5);
-      
+      z-index: 2;
+      height: 25rem;
+      width: 25rem;
+      position: relative;
+      padding-top: 5px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: rotate(137deg);
+        background-color: $background;
+        @extend .dark-mode-drop-shadow;
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      &__svg {
+        @extend .center;
+        padding-top: 5px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        width: 30rem;
+        height: 30rem;
+        left: -11px;
+        top: -10px;
+        filter: blur(2.5px);
+
+        .path {
+          stroke: url("#g");
+        }
+      }
+
+      &__portada {
+        @extend .center;
+        width: 100%;
+
+        &__img {
+          border-radius: 50%;
+          width: 90%;
+        }
       }
     }
-    .fa-power-off,.fa-ban{
-      font-size:4rem;
+    .titulos {
+      @extend .center;
+      @extend .dark-mode-inner-shadow;
+      overflow: hidden;
+
+      border-radius: 20px;
+      z-index: 2;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 85%;
+      height: 11rem;
+
+      &__nombre {
+        font-size: 2rem;
+        text-align: center;
+
+        font-weight: 800;
+        @extend .clip;
+      }
+
+      &__separa {
+        font-size: 1.5rem;
+        font-weight: 800;
+        @extend .clip;
+      }
+
+      &__tema {
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+        @extend .clip;
+      }
+    }
+  }
+  .controls {
+    @extend .center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10rem;
+    z-index: 2;
+
+    &__botones {
+      @extend .center;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: $black;
+      @extend .dark-mode-inner-shadow;
+    }
+    .fa-power-off {
+      width: 80%;
+      &:hover {
+        filter: (drop-shadow(0 0 0.5rem rgba(253, 5, 5, 0.5)));
+      }
+    }
+    .fa-ban {
+      width: 80%;
+      &:hover {
+        filter: (drop-shadow(0 0 0.5rem rgba(54, 250, 5, 0.5)));
+      }
+    }
+    .fa-power-off,
+    .fa-ban {
+      font-size: 4rem;
       font-weight: 700;
       animation: scale 1s ease infinite;
-      
     }
 
-
     input[type="range"] {
-    /* To remove default styles appplied by webkit browsers */
-    -webkit-appearance: none; 
-    width: 17rem;
-    background: transparent;
-    position: relative;
-}   
+      /* To remove default styles appplied by webkit browsers */
+      -webkit-appearance: none;
+      width: 17rem;
+      background: transparent;
+      position: relative;
+    }
 
-input[type="range"]:focus {
-    /* To remove default (mostly blue) outline appplied by browsers on :focus */
-    outline: 0;
-}
+    input[type="range"]:focus {
+      /* To remove default (mostly blue) outline appplied by browsers on :focus */
+      outline: 0;
+    }
 
-/* SLIDER THUMB -> represented by the orange ball in the design */
-/* Webkit based browsers (chrome, opera, ...) */
-input[type="range"]::-webkit-slider-thumb {
-     /* Removes the default styling */
-    -webkit-appearance: none;
+    /* SLIDER THUMB -> represented by the orange ball in the design */
+    /* Webkit based browsers (chrome, opera, ...) */
+    input[type="range"]::-webkit-slider-thumb {
+      /* Removes the default styling */
+      -webkit-appearance: none;
 
-    width: 2em;
-    height: 2em;
-    margin: .5em 0;
-    background-image: linear-gradient(to top, $blue, $pink);
-  text-shadow: 2px 2px 2px $black;
-    border-radius: 100%;
+      width: 2em;
+      height: 2em;
+      margin: 0.5em 0;
+      background-image: linear-gradient(to top, $blue, $pink);
+      text-shadow: 2px 2px 2px $black;
+      border-radius: 100%;
 
-    /* The inset shadow gives depth and makes the thumb look 3 dimensional and the other one shows a subtle effect of the shadow it creates because of the light source coming from the top left of the page */
-    box-shadow: 
-                inset .8em .8em 5px -8px rgba(255, 255, 255, .4),
-                inset -.4em -.4em 10px -3px rgba(0,0,0,.2),
-                0.7em 0.5em 7px -0.5em rgba(0,0,0,.4);;
+      /* The inset shadow gives depth and makes the thumb look 3 dimensional and the other one shows a subtle effect of the shadow it creates because of the light source coming from the top left of the page */
+      box-shadow: inset 0.8em 0.8em 5px -8px rgba(255, 255, 255, 0.4),
+        inset -0.4em -0.4em 10px -3px rgba(0, 0, 0, 0.2),
+        0.7em 0.5em 7px -0.5em rgba(0, 0, 0, 0.4);
 
-    cursor: pointer;
-}
+      cursor: pointer;
+    }
 
-/*All the same stuff for firefox */
-input[type=range]::-moz-range-thumb {
-    width: 2rem;
-    height: 2rem;
-    margin: .5em 0;
-    background-image: linear-gradient(to top, $blue, $pink);
-  text-shadow: 2px 2px 2px $black;
-    border-radius: 100%;
-    box-shadow: 
-                inset .8em .8em 5px -8px rgba(255, 255, 255, .4),
-                inset -.4em -.4em 10px -3px rgba(0,0,0,.2),
-                0.7em 0.5em 7px -0.5em rgba(0,0,0,.4);
-    cursor: pointer;
-    border: 0;
-}
+    /*All the same stuff for firefox */
+    input[type="range"]::-moz-range-thumb {
+      width: 2rem;
+      height: 2rem;
+      margin: 0.5em 0;
+      background-image: linear-gradient(to top, $blue, $pink);
+      text-shadow: 2px 2px 2px $black;
+      border-radius: 100%;
+      box-shadow: inset 0.8em 0.8em 5px -8px rgba(255, 255, 255, 0.4),
+        inset -0.4em -0.4em 10px -3px rgba(0, 0, 0, 0.2),
+        0.7em 0.5em 7px -0.5em rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      border: 0;
+    }
 
+    /* RUNNABLE TRACK -> represented by the indented carve in which the ball (thumb) moves */
+    /* Webkit browsers */
+    input[type="range"]::-webkit-slider-runnable-track {
+      background: transparent;
+      width: 95%;
+      height: 4rem;
+      padding: 0 0.5em;
+      border-radius: 2em;
 
-/* RUNNABLE TRACK -> represented by the indented carve in which the ball (thumb) moves */
-/* Webkit browsers */
-input[type="range"]::-webkit-slider-runnable-track {
-    background: transparent;
-    width: 95%;
-    height: 4rem;
-    padding: 0 .5em;
-    border-radius: 2em;
+      /* These shadow are what create the skeumorphic indent on the track. The first one is dark to show places in the indent that light don't reach and the second one shows places where light meets thereby creating the illusion of depth */
+      box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
+        inset -2px -2px 4px 0px $dark-mode-white;
+    }
+    /* For firefox */
+    input[type="range"]::-moz-range-track {
+      background: transparent;
+      width: 95%;
+      height: 4rem;
+      padding: 0 1em;
+      border-radius: 2em;
+      box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
+        inset -2px -2px 4px 0px $dark-mode-white;
+    }
 
-    /* These shadow are what create the skeumorphic indent on the track. The first one is dark to show places in the indent that light don't reach and the second one shows places where light meets thereby creating the illusion of depth */ 
-    box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
-    inset -2px -2px 4px 0px $dark-mode-white;
-}
-/* For firefox */
-input[type=range]::-moz-range-track {
-    background: transparent;
-    width: 95%;
-    height: 4rem;
-    padding: 0 1em;
-    border-radius: 2em;
-    box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
-    inset -2px -2px 4px 0px $dark-mode-white;
-}
+    input[type="range"]::before {
+      content: "1 2 3 4 5 6 7 8 9";
+      position: absolute;
+      text-align: center;
+      color: #c4c4c4;
+      font-size: 0.8rem;
 
-input[type="range"]::before {
-    content: "1 2 3 4 5 6 7 8 9";
-    position: absolute;
-    text-align: center;
-    color: #c4c4c4;
-    font-size: .8rem;
+      /*Serves to spread the letters to fit the whole width of the track */
+      letter-spacing: 0.3rem;
 
-    /*Serves to spread the letters to fit the whole width of the track */
-    letter-spacing: .3rem;
+      top: 1;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.6em;
 
-    top: 1; bottom: 0;
-    left: 0; right: 0;
-    padding: 1.6em;
+      /* Makes the letters look embossed adding to the skeumorphic theme of the design */
+      text-shadow: 0.5px 0.5px 0.9px rgba(0, 0, 0, 0.4);
 
-    /* Makes the letters look embossed adding to the skeumorphic theme of the design */
-    text-shadow: .5px .5px 0.9px rgba(0,0,0, .4);
-
-    z-index: -1;
-}
-
+      z-index: -1;
+    }
   }
-  
-  
 }
 
 .info {
   width: 100%;
   margin-top: 3rem;
- 
-  
 
-  &__container{
-  @extend .center;
-  flex-direction: column;
-  height:100%;
-    .clima{
-      display: grid;
-      width: 90%;
-      height: 30rem;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      grid-template-areas:"nom nom nom"
-                          "icono icono deg"
-                          "desc desc desc";
-      @extend .dark-mode-drop-shadow;
+  &__container {
+    @extend .center;
+    flex-direction: column;
+    height: 100%;
+    // .clima{
+    //   display: grid;
+    //   width: 90%;
+    //   height: 30rem;
+    //   grid-template-columns: repeat(3, 1fr);
+    //   grid-template-rows: repeat(3, 1fr);
+    //   grid-template-areas:"nom nom nom"
+    //                       "icono icono deg"
+    //                       "desc desc desc";
+    //   @extend .dark-mode-drop-shadow;
+    //   background: linear-gradient(145deg, #161616, #000000);
+    //   border-radius: 30px;
+    //   padding-bottom: 3rem;
+    //   &__name{
+    //     grid-area: nom;
+    //     @extend .center;
+    //     h1{
+
+    //       @extend .clip;
+    //       font-size: 3rem;
+    //     }
+
+    //   }
+
+    //   &__icon{
+    //     grid-area: icono;
+    //     @extend .center;
+    //   }
+
+    //   &__temp{
+    //     grid-area: deg;
+    //     @extend .center;
+    //     width: 2.5rem;
+
+    //     h1{
+    //       text-align: center;
+    //       @extend .clip;
+    //       font-size: 5rem;
+    //       justify-self: flex-start;
+    //     }
+    //   }
+
+    //   &__desc{
+    //     grid-area: desc;
+    //     @extend .center;
+    //     h1{
+    //       text-align: center;
+    //       @extend .clip;
+    //       font-size: 3rem;
+    //     }
+    //   }
+
+    // }
+
+    .thumbs {
+      @extend .center;
+      @extend .dark-mode-inner-shadow;
+      flex-wrap: wrap;
+      width: 100%;
+      grid-template-columns: repeat(4, 100px);
+      justify-content: center;
+      align-items: center;
       background: linear-gradient(145deg, #161616, #000000);
       border-radius: 30px;
-      padding-bottom: 3rem;
-      &__name{
-        grid-area: nom;
-        @extend .center;
-        h1{
-  
-          @extend .clip;
-          font-size: 3rem;
-        }
-        
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        @extend .dark-mode-inner-shadow;
+        border-radius: 30px;
+        z-index: 1;
+        width: 90%;
+        height: 90%;
+        background: linear-gradient(145deg, #161616, #000000);
       }
-
-      &__icon{
-        grid-area: icono;
-        @extend .center;
-      }
-
-      &__temp{
-        grid-area: deg;
-        @extend .center;
-        width: 2.5rem;
-
-        h1{
-          text-align: center;
-          @extend .clip;
-          font-size: 5rem;
-          justify-self: flex-start;
+      img {
+        margin: 2rem;
+        border-radius: 10px;
+        z-index: 2;
+        &:hover {
+          @extend .rodar;
+          border-radius: 50%;
         }
       }
-
-      &__desc{
-        grid-area: desc;
-        @extend .center;
-        h1{
-          text-align: center;
-          @extend .clip;
-          font-size: 3rem;
-        }
-      }
-
     }
   }
-    
-  .clock-face{
+
+  .clock-face {
     position: relative;
-    border:10px solid rgba(0, 0, 0, 0.1);
+    border: 10px solid rgba(0, 0, 0, 0.1);
     width: 20.625rem;
     height: 20.625rem;
     border-radius: 50%;
     @extend .dark-mode-inner-shadow;
     background: transparent;
 
-      .word{
-        position: absolute;
-        top:10%;
-        left:21%;
-        font-size: 3rem;
-        @extend .clip;
-        z-index: -2;
-      }
-  }
-  .reloj{
-      @extend .center;
-      position :relative;
-      width: 100%;
-      height: 35rem;
-
-      // &::after{
-      //   content: "";
-      //   position: absolute;
-      //   background:rgba(255, 255, 255, 0.1);
-      //   height: 100%;
-      //   width: 50%;
-      //   border-radius: 50%;
-      //   filter: blur(.5px);
-      // }
+    .word {
+      position: absolute;
+      top: 10%;
+      left: 21%;
+      font-size: 3rem;
+      @extend .clip;
+      z-index: -2;
     }
-  .face-center{
+  }
+  .reloj {
+    @extend .center;
+    position: relative;
+    width: 100%;
+    height: 35rem;
+
+    // &::after{
+    //   content: "";
+    //   position: absolute;
+    //   background:rgba(255, 255, 255, 0.1);
+    //   height: 100%;
+    //   width: 50%;
+    //   border-radius: 50%;
+    //   filter: blur(.5px);
+    // }
+  }
+  .face-center {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -490,72 +513,84 @@ input[type="range"]::before {
     box-shadow: 0 0 1px 2px #fff;
     border-radius: 50%;
   }
-  .hand{
+  .hand {
     position: absolute;
     top: 50%;
-    margin:auto;
+    margin: auto;
     height: 5px;
     width: 50%;
     border-radius: 50% 0 0 50%;
-    background-color:#fff;
+    background-color: #fff;
     transform-origin: 100%;
     transition: all 0.05s;
     transition-timing-function: ease-in-out;
-    
   }
   .second-hand {
-     background: linear-gradient(90deg, #3f37c9 5%, white 20%);
+    background: linear-gradient(90deg, #3f37c9 5%, white 20%);
   }
-  
+
   .min-hand {
-    background: linear-gradient(90deg,transparent 35%, #3f37c9 40%, #7209b7 50%);
-    box-shadow: 0 0  2px $black;
+    background: linear-gradient(
+      90deg,
+      transparent 35%,
+      #3f37c9 40%,
+      #7209b7 50%
+    );
+    box-shadow: 0 0 2px $black;
   }
   .hour-hand {
-    background: linear-gradient(90deg,transparent 10%, #7209b7 50%, #3f37c9 40%);
-    box-shadow: 0 0  2px $black;
+    background: linear-gradient(
+      90deg,
+      transparent 10%,
+      #7209b7 50%,
+      #3f37c9 40%
+    );
+    box-shadow: 0 0 2px $black;
   }
 
   .wave {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content:'';
-  width: 23rem;
-  height: 23rem;
-  background:linear-gradient(145deg, #161616, #000000);
-  transform: rotate(45deg);
-  border-radius: 30%;
-  z-index: -3;
-  @extend .dark-mode-inner-shadow;
-}
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    width: 23rem;
+    height: 23rem;
+    background: linear-gradient(145deg, #161616, #000000);
+    transform: rotate(45deg);
+    border-radius: 30%;
+    z-index: -3;
+    @extend .dark-mode-inner-shadow;
+  }
 }
 
 .footer {
   width: 100%;
-  height: 6.5rem;
+  height: 12rem;
   @extend .center;
- 
-  &__container{
-    width: 100%;
+
+  &__container {
+    width: 90%;
+    height: 10rem;
+    border-radius: 30px;
     @extend .center;
     background: linear-gradient(to bottom, #161616, #000000);
   }
 
   &__titulo {
-    font-size: 2.5rem;
     font-weight: 700;
+    width: 90%;
+    height: 8.5rem;
     @extend .clip;
     @extend .dark-mode-inner-shadow;
     text-align: center;
-    
-    padding:0 1rem;
+    padding: 0.5rem 1rem 0 0;
+    margin: 1rem;
     border-radius: 30px;
     &__nombre {
-      font-size: 4rem;
+      font-size: 2rem;
     }
   }
 }
@@ -578,89 +613,75 @@ input[type="range"]::before {
   }
 }
 
-
-
 @media (min-width: 612px) {
-
   .image {
     width: 50%;
     justify-content: space-around;
     height: 50rem;
 
-    
-
-    &__container{
-
-      height: 80%;
-      
+    &__repo__image {
+      width: 100%;
     }
-    &__link__chat{
+
+    &__container {
+      height: 80%;
+    }
+    &__link__chat {
       height: 20%;
     }
-    }
-  
+  }
+
   .repro {
     width: 50%;
-  
   }
 
-  .info{
-    
-    &__container{
-     
-      .clima{
+  //.info{
 
-    width: 50%;
-   }
-  }
-  }
+  // &__container{
 
+  //     .clima{
 
+  //   width: 50%;
+  //  }
+  //}
+  //}
 }
 
 @media (min-width: 930.98px) {
-
-  
+  .image__repo__img {
+    width: 80%;
+  }
 }
 
 @media (min-width: 1235px) {
-  html{
+  html {
     font-size: 11px;
   }
   .image {
     width: 33%;
     height: 80vh;
 
-    &__link__chat{
+    &__repo__img {
+      width: 100%;
+    }
+
+    &__link__chat {
       height: 20%;
     }
-    
   }
 
   .repro {
     width: 33%;
     height: 80vh;
-    .repro__container{
+    .repro__container {
       height: 100%;
       width: 80%;
     }
-
-    
-   
-
   }
 
   .info {
     width: 33%;
-    height: 80vh;
-
-    &__container{
-      .clima{
-
-    width: 70%;
-   } 
-      }
-    
+    // height: 80vh;
   }
 }
 

@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: "border-box";
+          box-sizing: "border-box";
+  font-family: "Poppins, sans-serif";
+}
+
+body {
+  overflow-x: hidden;
+  background: #373b44;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#4286f4), to(#373b44));
+  background: linear-gradient(to right, #4286f4, #373b44);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.repro {
+  position: relative;
+  border-radius: 20px;
+  height: 95%;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.22));
+  -webkit-box-shadow: inset 6px 6px 19px rgba(0, 0, 0, 0.4), inset -6px -6px 19px rgba(255, 255, 255, 0.4);
+          box-shadow: inset 6px 6px 19px rgba(0, 0, 0, 0.4), inset -6px -6px 19px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.repro .imagen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.repro .imagen .banner {
+  width: 98%;
+  height: 170px;
+  border-radius: 20px;
+  -webkit-box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.6), -6px -6px 19px rgba(255, 255, 255, 0.4);
+          box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.6), -6px -6px 19px rgba(255, 255, 255, 0.4);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+
+.repro .imagen .tapa {
+  width: 80%;
+  height: 80%;
+  border: 1px solid black;
+}
+
+.repro .turn .arm {
+  position: absolute;
+  width: 70px;
+  top: 13px;
+  right: 8px;
+  z-index: 4;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  transform: rotateZ(-22deg);
+  -webkit-transform: rotateZ(-22deg);
+  -moz-transform: rotateZ(-22deg);
+  -ms-transform: rotateZ(-22deg);
+  -o-transform: rotateZ(-22deg);
+  -webkit-transition: .5;
+  transition: .5;
+}
+
+.repro .marquesina {
+  position: absolute;
+  top: 173px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90%;
+}
+
+.dance {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.4), -6px -6px 19px rgba(255, 255, 255, 0.4);
+          box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.4), -6px -6px 19px rgba(255, 255, 255, 0.4);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.repro .turn {
+  background: -webkit-gradient(linear, left top, right top, from(#570104), to(#061161));
+  background: linear-gradient(to right, #570104, #061161);
+  opacity: 0;
+  border: 2px solid #000000;
+  -webkit-box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.5), -6px -6px 19px rgba(255, 255, 255, 0.3);
+          box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.5), -6px -6px 19px rgba(255, 255, 255, 0.3);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 100px;
+  left: 9px;
+  z-index: 2;
+}
+
+/* @keyframes mover{
+	from{transform-origin: top center; transform: rotateZ(-21deg); -webkit-transform: rotateZ(-21deg); -moz-transform: rotateZ(-21deg); -ms-transform: rotateZ(-21deg); -o-transform: rotateZ(-21deg); }
+	to{transform-origin: top center; transform: rotateZ(-23deg); -webkit-transform: rotateZ(-23deg); -moz-transform: rotateZ(-23deg); -ms-transform: rotateZ(-23deg); -o-transform: rotateZ(-23deg); }
+} */
+h1 {
+  color: #e5eef7;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+}
+
+.tema {
+  color: #ff0015;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+}
+
+#boton {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.dancer {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  -webkit-box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.4), -6px -6px 19px rgba(255, 255, 255, 0.4);
+          box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.4), -6px -6px 19px rgba(255, 255, 255, 0.4);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.volumen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: beige;
+  font-size: 3rem;
+  padding: 0 15px;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.9);
+}
+
+.v {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.4), -6px -6px 19px rgba(255, 255, 255, 0.4);
+          box-shadow: 6px 6px 19px rgba(0, 0, 0, 0.4), -6px -6px 19px rgba(255, 255, 255, 0.4);
+  background: rgba(41, 153, 250, 0.164);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.fas {
+  color: rgba(58, 53, 53, 0.479);
+  font-size: 1.5rem;
+}
+
+.danc {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.danc:after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-box-shadow: inset 6px 6px 19px rgba(0, 0, 0, 0.4), inset -6px -6px 19px rgba(255, 255, 255, 0.4);
+          box-shadow: inset 6px 6px 19px rgba(0, 0, 0, 0.4), inset -6px -6px 19px rgba(255, 255, 255, 0.4);
+}
+
+.player:after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-box-shadow: inset 6px 6px 19px rgba(0, 0, 0, 0.4), inset -6px -6px 19px rgba(255, 255, 255, 0.4);
+          box-shadow: inset 6px 6px 19px rgba(0, 0, 0, 0.4), inset -6px -6px 19px rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 576px) {
+  .dancer {
+    width: 150px;
+    height: 150px;
+  }
+  #boton {
+    width: 150px;
+    height: 150px;
+  }
+  .repro {
+    width: 400px;
+  }
+  .repro .turn {
+    width: 120px;
+    height: 120px;
+  }
+  .repro .turn .arm {
+    width: 49px;
+    top: 11px;
+    right: 7px;
+    z-index: 4;
+    -webkit-transform-origin: top center;
+            transform-origin: top center;
+    transform: rotateZ(-22deg);
+    -webkit-transform: rotateZ(-22deg);
+    -moz-transform: rotateZ(-22deg);
+    -ms-transform: rotateZ(-22deg);
+    -o-transform: rotateZ(-22deg);
+  }
+  .repro .marquesina {
+    top: 163px;
+  }
+  .v {
+    width: 40px;
+    height: 40px;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

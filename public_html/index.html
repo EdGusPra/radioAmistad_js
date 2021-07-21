@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="img/favicon.ico" rel="icon" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+		<title>Radio Amistad 2021</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="repro">
+				<div class="imagen">
+					<img class="banner" src="img/logo2a.png" alt="" />
+				</div>
+
+				<div class="imagen turn">
+					<img class="arm" src="img/turn.png" alt="turn" >
+					<img class="tapa" src="img/logo2.png" alt="" />
+				</div>
+				<div class="marquesina">
+					<marquee class="marq">
+						<h1 class="esc">Estas escuchando : <span class="tema"></span></h1
+					></marquee>
+				</div>
+
+				<div class="player">
+					<lottie-player
+						id="boton"
+						src="img/play.json"
+						background="transparent"
+						speed="1"
+						loop
+						autoplay
+					>
+					</lottie-player>
+				</div>
+				<div class="dance">
+					<div class="danc">
+						<lottie-player
+							id="dino"
+							class="dancer"
+							src="img/dino-dance.json"
+							background="transparent"
+							speed="1"
+							loop
+						>
+						</lottie-player>
+					</div>
+					<div class="danc">
+						<lottie-player
+							id="llama"
+							class="dancer"
+							src="img/dancing-llama.json"
+							background="transparent"
+							speed="1"
+							loop
+						>
+						</lottie-player>
+					</div>
+				</div>
+
+				<div class="volumen">
+					<div id="d" class="v"><i class="fas fa-volume-down"></i></div>
+
+					<h2>Volumen <span class="porcentaje"></span></h2>
+
+					<div id="u" class="v"><i class="fas fa-volume-up"></i></div>
+				</div>
+				
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@0.2.0/dist/lottie-player.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
