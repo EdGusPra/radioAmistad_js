@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (audio.paused) {
       audio.play();
 
-      player.innerHTML = `<img class="fa-power-off" src="img/stop.webp" alt="play">`;
+      player.innerHTML = `<img class="fa-power-off" src="https://res.cloudinary.com/doutajybn/image/upload/v1626974112/radioamistad/stop.webp" alt="play">`;
 
     } else {
       audio.pause();
-      player.innerHTML = `<img class="fa-ban" src="img/play.webp" alt="stop">`;
+      player.innerHTML = `<img class="fa-ban" src="https://res.cloudinary.com/doutajybn/image/upload/v1626974112/radioamistad/play.webp" alt="stop">`;
 
     }
   };
@@ -49,10 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const getInfo = await axios.get(
       "https://tools.zenoradio.com/api/stations/nce136tua2zuv/now_playing/"
     );
-    let artist = getInfo.data.artist.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) ?? "♪ ♫ ♬ 𝅘𝅥𝅯 𝅘𝅥𝅰 𝅘𝅥𝅲";
+    let artist = getInfo?.data.artist.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) ?? "♪ ♫ ♬ 𝅘𝅥𝅯 𝅘𝅥𝅰 𝅘𝅥𝅲";
 
 
-    let title = getInfo.data.title.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) ?? "♪ ♫ ♬ 𝅘𝅥𝅯 𝅘𝅥𝅰 𝅘𝅥𝅲";
+    let title = getInfo?.data.title.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase()))) ?? "♪ ♫ ♬ 𝅘𝅥𝅯 𝅘𝅥𝅰 𝅘𝅥𝅲";
     titulo.innerHTML = `${artist}`;
     tema.innerHTML = `${title}`;
 
@@ -61,25 +61,28 @@ document.addEventListener("DOMContentLoaded", () => {
       `https://www.theaudiodb.com/api/v1/json/1/search.php?s=${getInfo.data.artist}`
     );
 
-    const thumbs = await axios.get(`https://itunes.apple.com/search?term=${getInfo.data.artist}&media=music&limit=12`);
+    const thumbs = await axios.get(`https://itunes.apple.com/search?term=${getInfo.data.artist}&media=music`);
     let a = thumbs.data.results;
     let art=a.map((a)=>{return a.artworkUrl100;});
     let arte = new Set(art);
+    arte=[...arte];
     thumb.innerHTML = "";
-    arte.forEach(element => {
+    arte.forEach((element,i) => {
+      if(i<=9){
           let a = document.createElement("img");
           a.alt = `${getInfo.data.artist}`;
-          a.src=element ?? "img/logo.png";
+          a.src = element ?? "https://res.cloudinary.com/doutajybn/image/upload/v1626971342/radioamistad/portadaDisco.webp";
           fragment.appendChild(a);
+        }
     });
     
     thumb.appendChild(fragment);
 
 
     if (getTapa.data.artists) {
-      tapa.src = getTapa.data.artists[0].strArtistThumb ?? "img/portada_disco.webp";
+      tapa.src = getTapa.data.artists[0].strArtistThumb ?? "https://res.cloudinary.com/doutajybn/image/upload/v1626971342/radioamistad/portadaDisco.webp";
     } else {
-      tapa.src = "img/portada_disco.webp";
+      tapa.src = "https://res.cloudinary.com/doutajybn/image/upload/v1626971342/radioamistad/portadaDisco.webp";
     }
   };
 
