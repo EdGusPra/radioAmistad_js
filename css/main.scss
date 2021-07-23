@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 $black: #111;
+
 $background: #171717;
 $white: #ecf0f3;
 $pink: #ec2f4b;
@@ -15,682 +16,680 @@ $light-mode-white: rgba(255, 255, 255, 0.75);
 $light-mode-black: rgba(0, 0, 0, 0.15);
 $transition-duration: 0.5s;
 @mixin flex($justifica, $alinea) {
-  display: flex;
-  justify-content: $justifica;
-  align-items: $alinea;
+	display: flex;
+	justify-content: $justifica;
+	align-items: $alinea;
 }
 
 .sombra {
-  border-radius: 30px 0 0 30px;
-  background: linear-gradient(to top, #000000, #0f0f0f);
-  box-shadow: 20px 25px 25px #0c0c0c, -20px -25px 25px #262626;
+	border-radius: 30px 0 0 30px;
+	background: linear-gradient(to top, #000000, #0f0f0f);
+	box-shadow: 20px 25px 25px #0c0c0c, -20px -25px 25px #262626;
 }
 
 .clip {
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(to top, $blue, $pink);
-  text-shadow: 2px 2px 2px #000;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	background-image: linear-gradient(to top, $blue, $pink);
+	text-shadow: 2px 2px 2px #000;
 }
 
 .dark-mode-inner-shadow {
-  box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
-    inset -2px -2px 4px 0px $dark-mode-white;
+	box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
+		inset -2px -2px 4px 0px $dark-mode-white;
 }
 .dark-mode-drop-shadow {
-  box-shadow: 10px 10px 10px 0px $dark-mode-black,
-    -2px -2px 10px 0px $dark-mode-white;
+	box-shadow: 10px 10px 10px 0px $dark-mode-black,
+		-2px -2px 10px 0px $dark-mode-white;
 }
 
 .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: "border-box";
-  box-sizing: "border-box";
-  font-family: "Poppins, sans-serif";
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: 'border-box';
+	box-sizing: 'border-box';
+	font-family: 'Poppins, sans-serif';
 }
 
 html {
-  font-size: 10px;
+	font-size: 10px;
 }
 body {
-  @extend .center;
-  background-color: $background;
+	@extend .center;
+	background-color: $background;
 }
 
 // .swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
 
 // }
 .swal2-title {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 .swal2-html-container {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 .main {
-  @extend .center;
-  flex-flow: row wrap;
-  min-height: 100vh;
-  width: 100%;
+	@extend .center;
+	flex-flow: row wrap;
+	min-height: 100vh;
+	width: 100%;
 }
 
 .rodar {
-  animation: rodar 5s linear infinite;
+	animation: rodar 5s linear infinite;
 }
 
 .nav {
-  @extend .center;
-  width: 100%;
-  height: 6.25rem;
-  padding: 2rem;
+	@extend .center;
+	width: 100%;
+	height: 6.25rem;
+	padding: 2rem;
 }
 
 .image {
-  @extend .center;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 40rem;
+	@extend .center;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 40rem;
 
-  &__link__chat {
-    width: 80%;
-    height: 15%;
-    @extend .center;
-    @extend .dark-mode-inner-shadow;
-    background: linear-gradient(to left, #161616, #000000);
-    border: 10px solid $black;
-    border-radius: 30px;
+	&__link__chat {
+		width: 80%;
+		height: 15%;
+		@extend .center;
+		@extend .dark-mode-inner-shadow;
+		background: linear-gradient(to left, #161616, #000000);
+		border: 10px solid $black;
+		border-radius: 30px;
 
-    a {
-      border-radius: 20px;
-      padding: 10px;
-      text-decoration: none;
-      @extend .clip;
-      font-size: 3rem;
-      font-weight: 400;
-    }
-  }
+		a {
+			border-radius: 20px;
+			padding: 10px;
+			text-decoration: none;
+			@extend .clip;
+			font-size: 3rem;
+			font-weight: 400;
+		}
+	}
 
-  &__repo {
-    @extend .center;
-    background: linear-gradient(to left, #161616, #000000);
-    width: 90%;
-    height: 80%;
+	&__repo {
+		@extend .center;
+		background: linear-gradient(to left, #161616, #000000);
+		width: 90%;
+		height: 80%;
 
-    @extend .dark-mode-drop-shadow;
-    border-radius: 50px;
+		@extend .dark-mode-drop-shadow;
+		border-radius: 50px;
 
-    &__img {
-      width: 70%;
-    }
-  }
+		&__img {
+			width: 70%;
+		}
+	}
 }
 
 .repro {
-  @extend .center;
-  width: 100%;
-  .repro__container {
-    @extend .center;
-    @extend .dark-mode-inner-shadow;
-    flex-flow: column;
-    justify-content: space-around;
-    width: 90%;
-    height: 55rem;
-    margin-top: 2rem;
-    background-color: $black;
-    border-radius: 30px;
-    position: relative;
+	@extend .center;
+	width: 100%;
+	.repro__container {
+		@extend .center;
+		@extend .dark-mode-inner-shadow;
+		flex-flow: column;
+		justify-content: space-around;
+		width: 90%;
+		height: 55rem;
+		margin-top: 2rem;
+		background-color: $black;
+		border-radius: 30px;
+		position: relative;
 
-    &:after {
-      content: "";
-      position: absolute;
-      width: 90%;
-      height: 95%;
-      background: linear-gradient(to right, #161616, #000000);
-      @extend .dark-mode-drop-shadow;
-      border-radius: 30px;
-    }
+		&:after {
+			content: '';
+			position: absolute;
+			width: 90%;
+			height: 95%;
+			background: linear-gradient(to right, #161616, #000000);
+			@extend .dark-mode-drop-shadow;
+			border-radius: 30px;
+		}
 
-    .disco {
-      @extend .center;
-      z-index: 2;
-      height: 25rem;
-      width: 25rem;
-      position: relative;
-      padding-top: 5px;
+		.disco {
+			@extend .center;
+			z-index: 2;
+			height: 25rem;
+			width: 25rem;
+			position: relative;
+			padding-top: 5px;
 
-      &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        transform: rotate(137deg);
-        background-color: $background;
-        @extend .dark-mode-drop-shadow;
-        border-radius: 50%;
-        z-index: -1;
-      }
+			&::after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transform: rotate(137deg);
+				background-color: $background;
+				@extend .dark-mode-drop-shadow;
+				border-radius: 50%;
+				z-index: -1;
+			}
 
-      &__svg {
-        @extend .center;
-        padding-top: 5px;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-        width: 30rem;
-        height: 30rem;
-        left: -11px;
-        top: -10px;
-        filter: blur(2.5px);
+			&__svg {
+				@extend .center;
+				padding-top: 5px;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index: 3;
+				width: 30rem;
+				height: 30rem;
+				left: -11px;
+				top: -10px;
+				filter: blur(2.5px);
 
-        .path {
-          stroke: url("#g");
-        }
-      }
+				.path {
+					stroke: url('#g');
+				}
+			}
 
-      &__portada {
-        @extend .center;
-        width: 100%;
+			&__portada {
+				@extend .center;
+				width: 100%;
 
-        &__img {
-          border-radius: 50%;
-          width: 80%;
-        }
-      }
-    }
-    .titulos {
-      @extend .center;
-      @extend .dark-mode-inner-shadow;
-      overflow: hidden;
+				&__img {
+					border-radius: 50%;
+					width: 90%;
+				}
+			}
+		}
+		.titulos {
+			@extend .center;
+			@extend .dark-mode-inner-shadow;
+			overflow: hidden;
 
-      border-radius: 20px;
-      z-index: 2;
-      flex-direction: column;
-      justify-content: space-evenly;
-      width: 85%;
-      height: 11rem;
+			border-radius: 20px;
+			z-index: 2;
+			flex-direction: column;
+			justify-content: space-evenly;
+			width: 85%;
+			height: 11rem;
 
-      &__nombre {
-        font-size: 2rem;
-        text-align: center;
+			&__nombre {
+				font-size: 2rem;
+				text-align: center;
 
-        font-weight: 800;
-        @extend .clip;
-      }
+				font-weight: 800;
+				@extend .clip;
+			}
 
-      &__separa {
-        font-size: 1.5rem;
-        font-weight: 800;
-        @extend .clip;
-      }
+			&__separa {
+				font-size: 1.5rem;
+				font-weight: 800;
+				@extend .clip;
+			}
 
-      &__tema {
-        font-size: 2rem;
-        font-weight: 400;
-        text-align: center;
-        @extend .clip;
-      }
-    }
-  }
-  .controls {
-    @extend .center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 10rem;
-    z-index: 2;
+			&__tema {
+				font-size: 2rem;
+				font-weight: 400;
+				text-align: center;
+				@extend .clip;
+			}
+		}
+	}
+	.controls {
+		@extend .center;
+		justify-content: space-evenly;
+		width: 100%;
+		height: 10rem;
+		z-index: 2;
 
-    &__botones {
-      @extend .center;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background-color: $black;
-      @extend .dark-mode-inner-shadow;
-    }
-    .fa-power-off {
-      width: 80%;
-      &:hover {
-        filter: (drop-shadow(0 0 0.5rem rgba(253, 5, 5, 0.5)));
-      }
-    }
-    .fa-ban {
-      width: 80%;
-      &:hover {
-        filter: (drop-shadow(0 0 0.5rem rgba(54, 250, 5, 0.5)));
-      }
-    }
-    .fa-power-off,
-    .fa-ban {
-      font-size: 4rem;
-      font-weight: 700;
-      animation: scale 1s ease infinite;
-    }
-    .form {
-      @extend .center;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 7rem;
-      label{
-        @extend .clip;
-        font-size: 1.9rem;
-      }
-    }
+		&__botones {
+			@extend .center;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			background-color: $black;
+			@extend .dark-mode-inner-shadow;
+		}
+		.fa-power-off {
+			width: 80%;
+			&:hover {
+				filter: (drop-shadow(0 0 0.5rem rgba(253, 5, 5, 0.5)));
+			}
+		}
+		.fa-ban {
+			width: 80%;
+			&:hover {
+				filter: (drop-shadow(0 0 0.5rem rgba(54, 250, 5, 0.5)));
+			}
+		}
+		.fa-power-off,
+		.fa-ban {
+			font-size: 4rem;
+			font-weight: 700;
+			animation: scale 1s ease infinite;
+		}
+		.form {
+			@extend .center;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 7rem;
+			label {
+				@extend .clip;
+				font-size: 1.9rem;
+			}
+		}
 
-    input[type="range"] {
-      /* To remove default styles appplied by webkit browsers */
-      -webkit-appearance: none;
-      width: 17rem;
-      background: transparent;
-      position: relative;
-    }
+		input[type='range'] {
+			/* To remove default styles appplied by webkit browsers */
+			-webkit-appearance: none;
+			width: 17rem;
+			background: transparent;
+			position: relative;
+		}
 
-    input[type="range"]:focus {
-      /* To remove default (mostly blue) outline appplied by browsers on :focus */
-      outline: 0;
-    }
+		input[type='range']:focus {
+			/* To remove default (mostly blue) outline appplied by browsers on :focus */
+			outline: 0;
+		}
 
-    /* SLIDER THUMB -> represented by the orange ball in the design */
-    /* Webkit based browsers (chrome, opera, ...) */
-    input[type="range"]::-webkit-slider-thumb {
-      /* Removes the default styling */
-      -webkit-appearance: none;
+		/* SLIDER THUMB -> represented by the orange ball in the design */
+		/* Webkit based browsers (chrome, opera, ...) */
+		input[type='range']::-webkit-slider-thumb {
+			/* Removes the default styling */
+			-webkit-appearance: none;
 
-      width: 2em;
-      height: 2em;
-      margin: 0.5em 0;
-      background-image: linear-gradient(to top, $blue, $pink);
-      text-shadow: 2px 2px 2px $black;
-      border-radius: 100%;
+			width: 2em;
+			height: 2em;
+			margin: 0.5em 0;
+			background-image: linear-gradient(to top, $blue, $pink);
+			text-shadow: 2px 2px 2px $black;
+			border-radius: 100%;
 
-      /* The inset shadow gives depth and makes the thumb look 3 dimensional and the other one shows a subtle effect of the shadow it creates because of the light source coming from the top left of the page */
-      box-shadow: inset 0.8em 0.8em 5px -8px rgba(255, 255, 255, 0.4),
-        inset -0.4em -0.4em 10px -3px rgba(0, 0, 0, 0.2),
-        0.7em 0.5em 7px -0.5em rgba(0, 0, 0, 0.4);
+			/* The inset shadow gives depth and makes the thumb look 3 dimensional and the other one shows a subtle effect of the shadow it creates because of the light source coming from the top left of the page */
+			box-shadow: inset 0.8em 0.8em 5px -8px rgba(255, 255, 255, 0.4),
+				inset -0.4em -0.4em 10px -3px rgba(0, 0, 0, 0.2),
+				0.7em 0.5em 7px -0.5em rgba(0, 0, 0, 0.4);
 
-      cursor: pointer;
-    }
+			cursor: pointer;
+		}
 
-    /*All the same stuff for firefox */
-    input[type="range"]::-moz-range-thumb {
-      width: 2rem;
-      height: 2rem;
-      margin: 0.5em 0;
-      background-image: linear-gradient(to top, $blue, $pink);
-      text-shadow: 2px 2px 2px $black;
-      border-radius: 100%;
-      box-shadow: inset 0.8em 0.8em 5px -8px rgba(255, 255, 255, 0.4),
-        inset -0.4em -0.4em 10px -3px rgba(0, 0, 0, 0.2),
-        0.7em 0.5em 7px -0.5em rgba(0, 0, 0, 0.4);
-      cursor: pointer;
-      border: 0;
-    }
+		/*All the same stuff for firefox */
+		input[type='range']::-moz-range-thumb {
+			width: 2rem;
+			height: 2rem;
+			margin: 0.5em 0;
+			background-image: linear-gradient(to top, $blue, $pink);
+			text-shadow: 2px 2px 2px $black;
+			border-radius: 100%;
+			box-shadow: inset 0.8em 0.8em 5px -8px rgba(255, 255, 255, 0.4),
+				inset -0.4em -0.4em 10px -3px rgba(0, 0, 0, 0.2),
+				0.7em 0.5em 7px -0.5em rgba(0, 0, 0, 0.4);
+			cursor: pointer;
+			border: 0;
+		}
 
-    /* RUNNABLE TRACK -> represented by the indented carve in which the ball (thumb) moves */
-    /* Webkit browsers */
-    input[type="range"]::-webkit-slider-runnable-track {
-      background: transparent;
-      width: 95%;
-      height: 4rem;
-      padding: 0 0.5em;
-      border-radius: 2em;
+		/* RUNNABLE TRACK -> represented by the indented carve in which the ball (thumb) moves */
+		/* Webkit browsers */
+		input[type='range']::-webkit-slider-runnable-track {
+			background: transparent;
+			width: 95%;
+			height: 4rem;
+			padding: 0 0.5em;
+			border-radius: 2em;
 
-      /* These shadow are what create the skeumorphic indent on the track. The first one is dark to show places in the indent that light don't reach and the second one shows places where light meets thereby creating the illusion of depth */
-      box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
-        inset -2px -2px 4px 0px $dark-mode-white;
-    }
-    /* For firefox */
-    input[type="range"]::-moz-range-track {
-      background: transparent;
-      width: 95%;
-      height: 4rem;
-      padding: 0 1em;
-      border-radius: 2em;
-      box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
-        inset -2px -2px 4px 0px $dark-mode-white;
-    }
+			/* These shadow are what create the skeumorphic indent on the track. The first one is dark to show places in the indent that light don't reach and the second one shows places where light meets thereby creating the illusion of depth */
+			box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
+				inset -2px -2px 4px 0px $dark-mode-white;
+		}
+		/* For firefox */
+		input[type='range']::-moz-range-track {
+			background: transparent;
+			width: 95%;
+			height: 4rem;
+			padding: 0 1em;
+			border-radius: 2em;
+			box-shadow: inset 5px 5px 5px 0px $dark-mode-black,
+				inset -2px -2px 4px 0px $dark-mode-white;
+		}
 
-    input[type="range"]::before {
-      content: "1 2 3 4 5 6 7 8 9";
-      position: absolute;
-      text-align: center;
-      color: #c4c4c4;
-      font-size: 0.8rem;
+		input[type='range']::before {
+			content: '1 2 3 4 5 6 7 8 9';
+			position: absolute;
+			text-align: center;
+			color: #c4c4c4;
+			font-size: 0.8rem;
 
-      /*Serves to spread the letters to fit the whole width of the track */
-      letter-spacing: 0.3rem;
+			/*Serves to spread the letters to fit the whole width of the track */
+			letter-spacing: 0.3rem;
 
-      top: 1;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1.6em;
+			top: 1;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 1.6em;
 
-      /* Makes the letters look embossed adding to the skeumorphic theme of the design */
-      text-shadow: 0.5px 0.5px 0.9px rgba(0, 0, 0, 0.4);
+			/* Makes the letters look embossed adding to the skeumorphic theme of the design */
+			text-shadow: 0.5px 0.5px 0.9px rgba(0, 0, 0, 0.4);
 
-      z-index: -1;
-    }
-  }
+			z-index: -1;
+		}
+	}
 }
 
 .info {
-  width: 100%;
-  margin-top: 3rem;
+	width: 100%;
+	margin-top: 3rem;
 
-  &__container {
-    @extend .center;
-    flex-direction: column;
-    height: 100%;
-    // .clima{
-    //   display: grid;
-    //   width: 90%;
-    //   height: 30rem;
-    //   grid-template-columns: repeat(3, 1fr);
-    //   grid-template-rows: repeat(3, 1fr);
-    //   grid-template-areas:"nom nom nom"
-    //                       "icono icono deg"
-    //                       "desc desc desc";
-    //   @extend .dark-mode-drop-shadow;
-    //   background: linear-gradient(145deg, #161616, #000000);
-    //   border-radius: 30px;
-    //   padding-bottom: 3rem;
-    //   &__name{
-    //     grid-area: nom;
-    //     @extend .center;
-    //     h1{
+	&__container {
+		@extend .center;
+		flex-direction: column;
+		height: 100%;
+		// .clima{
+		//   display: grid;
+		//   width: 90%;
+		//   height: 30rem;
+		//   grid-template-columns: repeat(3, 1fr);
+		//   grid-template-rows: repeat(3, 1fr);
+		//   grid-template-areas:"nom nom nom"
+		//                       "icono icono deg"
+		//                       "desc desc desc";
+		//   @extend .dark-mode-drop-shadow;
+		//   background: linear-gradient(145deg, #161616, #000000);
+		//   border-radius: 30px;
+		//   padding-bottom: 3rem;
+		//   &__name{
+		//     grid-area: nom;
+		//     @extend .center;
+		//     h1{
 
-    //       @extend .clip;
-    //       font-size: 3rem;
-    //     }
+		//       @extend .clip;
+		//       font-size: 3rem;
+		//     }
 
-    //   }
+		//   }
 
-    //   &__icon{
-    //     grid-area: icono;
-    //     @extend .center;
-    //   }
+		//   &__icon{
+		//     grid-area: icono;
+		//     @extend .center;
+		//   }
 
-    //   &__temp{
-    //     grid-area: deg;
-    //     @extend .center;
-    //     width: 2.5rem;
+		//   &__temp{
+		//     grid-area: deg;
+		//     @extend .center;
+		//     width: 2.5rem;
 
-    //     h1{
-    //       text-align: center;
-    //       @extend .clip;
-    //       font-size: 5rem;
-    //       justify-self: flex-start;
-    //     }
-    //   }
+		//     h1{
+		//       text-align: center;
+		//       @extend .clip;
+		//       font-size: 5rem;
+		//       justify-self: flex-start;
+		//     }
+		//   }
 
-    //   &__desc{
-    //     grid-area: desc;
-    //     @extend .center;
-    //     h1{
-    //       text-align: center;
-    //       @extend .clip;
-    //       font-size: 3rem;
-    //     }
-    //   }
+		//   &__desc{
+		//     grid-area: desc;
+		//     @extend .center;
+		//     h1{
+		//       text-align: center;
+		//       @extend .clip;
+		//       font-size: 3rem;
+		//     }
+		//   }
 
-    // }
+		// }
 
-    .thumbs {
-      @extend .center;
-      @extend .dark-mode-inner-shadow;
-      flex-wrap: wrap;
-      width: 100%;
-      grid-template-columns: repeat(4, 100px);
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(145deg, #161616, #000000);
-      border-radius: 30px;
-      position: relative;
-     
-      img {
-        margin: 2rem;
-        border-radius: 10px;
-        z-index: 2;
-        &:hover {
-          @extend .rodar;
-          border-radius: 50%;
-        }
-      }
-    }
-  }
+		.thumbs {
+			@extend .center;
+			@extend .dark-mode-inner-shadow;
+			flex-wrap: wrap;
+			width: 100%;
+			grid-template-columns: repeat(4, 100px);
+			justify-content: center;
+			align-items: center;
+			background: linear-gradient(145deg, #161616, #000000);
+			border-radius: 30px;
+			position: relative;
 
-  .clock-face {
-    position: relative;
-    border: 10px solid rgba(0, 0, 0, 0.1);
-    width: 20.625rem;
-    height: 20.625rem;
-    border-radius: 50%;
-    @extend .dark-mode-inner-shadow;
-    background: transparent;
+			img {
+				margin: 2rem;
+				border-radius: 10px;
+				z-index: 2;
+				&:hover {
+					@extend .rodar;
+					border-radius: 50%;
+				}
+			}
+		}
+	}
 
-    .word {
-      position: absolute;
-      top: 10%;
-      left: 21%;
-      font-size: 3rem;
-      @extend .clip;
-      z-index: -2;
-    }
-  }
-  .reloj {
-    @extend .center;
-    position: relative;
-    width: 100%;
-    height: 35rem;
+	.clock-face {
+		position: relative;
+		border: 10px solid rgba(0, 0, 0, 0.1);
+		width: 20.625rem;
+		height: 20.625rem;
+		border-radius: 50%;
+		@extend .dark-mode-inner-shadow;
+		background: transparent;
 
-    // &::after{
-    //   content: "";
-    //   position: absolute;
-    //   background:rgba(255, 255, 255, 0.1);
-    //   height: 100%;
-    //   width: 50%;
-    //   border-radius: 50%;
-    //   filter: blur(.5px);
-    // }
-  }
-  .face-center {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 5%;
-    height: 5%;
-    background-color: $black;
-    box-shadow: 0 0 1px 2px #fff;
-    border-radius: 50%;
-  }
-  .hand {
-    position: absolute;
-    top: 50%;
-    margin: auto;
-    height: 5px;
-    width: 50%;
-    border-radius: 50% 0 0 50%;
-    background-color: #fff;
-    transform-origin: 100%;
-    transition: all 0.05s;
-    transition-timing-function: ease-in-out;
-  }
-  .second-hand {
-    background: linear-gradient(90deg, #3f37c9 5%, white 20%);
-  }
+		.word {
+			position: absolute;
+			top: 10%;
+			left: 21%;
+			font-size: 3rem;
+			@extend .clip;
+			z-index: -2;
+		}
+	}
+	.reloj {
+		@extend .center;
+		position: relative;
+		width: 100%;
+		height: 35rem;
 
-  .min-hand {
-    background: linear-gradient(
-      90deg,
-      transparent 35%,
-      #3f37c9 40%,
-      #7209b7 50%
-    );
-    box-shadow: 0 0 2px $black;
-  }
-  .hour-hand {
-    background: linear-gradient(
-      90deg,
-      transparent 10%,
-      #7209b7 50%,
-      #3f37c9 40%
-    );
-    box-shadow: 0 0 2px $black;
-  }
+		// &::after{
+		//   content: "";
+		//   position: absolute;
+		//   background:rgba(255, 255, 255, 0.1);
+		//   height: 100%;
+		//   width: 50%;
+		//   border-radius: 50%;
+		//   filter: blur(.5px);
+		// }
+	}
+	.face-center {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 5%;
+		height: 5%;
+		background-color: $black;
+		box-shadow: 0 0 1px 2px #fff;
+		border-radius: 50%;
+	}
+	.hand {
+		position: absolute;
+		top: 50%;
+		margin: auto;
+		height: 5px;
+		width: 50%;
+		border-radius: 50% 0 0 50%;
+		background-color: #fff;
+		transform-origin: 100%;
+		transition: all 0.05s;
+		transition-timing-function: ease-in-out;
+	}
+	.second-hand {
+		background: linear-gradient(90deg, #3f37c9 5%, white 20%);
+	}
 
-  .wave {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: "";
-    width: 23rem;
-    height: 23rem;
-    background: linear-gradient(145deg, #161616, #000000);
-    transform: rotate(45deg);
-    border-radius: 30%;
-    z-index: -3;
-    @extend .dark-mode-inner-shadow;
-  }
+	.min-hand {
+		background: linear-gradient(
+			90deg,
+			transparent 35%,
+			#3f37c9 40%,
+			#7209b7 50%
+		);
+		box-shadow: 0 0 2px $black;
+	}
+	.hour-hand {
+		background: linear-gradient(
+			90deg,
+			transparent 10%,
+			#7209b7 50%,
+			#3f37c9 40%
+		);
+		box-shadow: 0 0 2px $black;
+	}
+
+	.wave {
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		content: '';
+		width: 23rem;
+		height: 23rem;
+		background: linear-gradient(145deg, #161616, #000000);
+		transform: rotate(45deg);
+		border-radius: 30%;
+		z-index: -3;
+		@extend .dark-mode-inner-shadow;
+	}
 }
 
 .footer {
-  width: 100%;
-  height: 12rem;
-  @extend .center;
+	width: 100%;
+	height: 12rem;
+	@extend .center;
 
-  &__container {
-    width: 90%;
-    height: 10rem;
-    border-radius: 30px;
-    @extend .center;
-    background: linear-gradient(to bottom, #161616, #000000);
-  }
+	&__container {
+		width: 90%;
+		height: 10rem;
+		border-radius: 30px;
+		@extend .center;
+		background: linear-gradient(to bottom, #161616, #000000);
+	}
 
-  &__titulo {
-    font-weight: 700;
-    width: 90%;
-    height: 8.5rem;
-    @extend .clip;
-    @extend .dark-mode-inner-shadow;
-    text-align: center;
-    padding: 0.5rem 1rem 0 0;
-    margin: 1rem;
-    border-radius: 30px;
-    &__nombre {
-      font-size: 2rem;
-    }
-  }
+	&__titulo {
+		font-weight: 700;
+		width: 90%;
+		height: 8.5rem;
+		@extend .clip;
+		@extend .dark-mode-inner-shadow;
+		text-align: center;
+		padding: 0.5rem 1rem 0 0;
+		margin: 1rem;
+		border-radius: 30px;
+		&__nombre {
+			font-size: 2rem;
+		}
+	}
 }
 
 @keyframes rodar {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes scale {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.1);
+	}
 }
 
 @media (min-width: 612px) {
-  .image {
-    width: 50%;
-    justify-content: space-around;
-    height: 50rem;
+	.image {
+		width: 50%;
+		justify-content: space-around;
+		height: 50rem;
 
-    &__repo__image {
-      width: 50%;
-      
+		&__repo__image {
+			width: 50%;
+		}
 
-    }
+		&__container {
+			height: 80%;
+		}
+		&__link__chat {
+			height: 20%;
+		}
 
-    &__container {
-      height: 80%;
-    }
-    &__link__chat {
-      height: 20%;
-    }
+		.image__repo__img {
+			width: 70%;
+		}
+	}
 
-        .image__repo__img{
-          width: 70%;
-        }
-  }
+	.repro {
+		width: 50%;
+	}
 
-  .repro {
-    width: 50%;
-  }
+	//.info{
 
-  //.info{
+	// &__container{
 
-  // &__container{
+	//     .clima{
 
-  //     .clima{
-
-  //   width: 50%;
-  //  }
-  //}
-  //}
+	//   width: 50%;
+	//  }
+	//}
+	//}
 }
 
 @media (min-width: 930.98px) {
-  .image__repo__img {
-    width: 20rem;
-  }
+	.image__repo__img {
+		width: 20rem;
+	}
 }
 
 @media (min-width: 1235px) {
-  html {
-    font-size: 11px;
-  }
-  .image {
-    width: 33%;
-    height: 80vh;
+	html {
+		font-size: 11px;
+	}
+	.image {
+		width: 33%;
+		height: 80vh;
 
-    &__repo__img {
-      width: 100%;
-    }
+		&__repo__img {
+			width: 100%;
+		}
 
-    &__link__chat {
-      height: 20%;
-    }
-  }
+		&__link__chat {
+			height: 20%;
+		}
+	}
 
-  .repro {
-    width: 33%;
-    height: 80vh;
-    .repro__container {
-      height: 100%;
-      width: 80%;
-    }
-  }
+	.repro {
+		width: 33%;
+		height: 80vh;
+		.repro__container {
+			height: 100%;
+			width: 80%;
+		}
+	}
 
-  .info {
-    width: 33%;
-    // height: 80vh;
-  }
+	.info {
+		width: 33%;
+		// height: 80vh;
+	}
 }
 
 @media (min-width: 1399.98px) {
